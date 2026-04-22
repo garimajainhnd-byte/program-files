@@ -1,24 +1,24 @@
 [program-1 WAP for addition sub mul div using object and classes](#code1)
-[program-1 WAP for addition of two distance where each distance is given in m,cm,mm](#code1)
-[program-1 WAP for similarly,test the result by creation of object in main class where each distance is given in m,cm](#code1)
-[program-1 WAP for similarly for time given in hours,min and seconds](#code1)
-[program-1 WAP for time given in hours and miniutes](#code1)
-[program-1 WAP for collect the code from internet for any five programs of c language (fact,armstrong,palindrome,fibonacci,pattern)](#code1)
-[program-1 WAP for class that is having four method for 1-dimensionalarray](#code1)
-[program-1 WAP for class with multiple methods to perform matrix operations (transpose,addition,sum of rows,sum of columns,sum of diagonal](#code1)
-[program-1 WAP for program using three classes to print 1-100,1-100,1-100 with and without thread and analyse the output and repeat the same program using runnable interface](#code1)
-[program-1 WAP for   ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
+[program-2 WAP for addition of two distance where each distance is given in m,cm,mm](#code2)
+[program-3 WAP for similarly,test the result by creation of object in main class where each distance is given in m,cm](#code3)
+[program-4 WAP for similarly for time given in hours,min and seconds](#code4)
+[program-5 WAP for time given in hours and miniutes](#code5)
+[program-6 WAP for collect the code from internet for any five programs of c language (fact,armstrong,palindrome,fibonacci,pattern)](#code6)
+[program-7 WAP for class that is having four method for 1-dimensionalarray](#code7)
+[program-8 WAP for class with multiple methods to perform matrix operations (transpose,addition,sum of rows,sum of columns,sum of diagonal](#code8)
+[program-9 WAP for program using three classes to print 1-100,1-100,1-100 with and without thread and analyse the output and repeat the same program using runnable interface](#code9)
+[program-10 WAP for Using the concept of multithreading the output of all three threads must be synchronised (use join method).   ](#code10)
+[program-11 WAP for Addition of 2 numbers using swing. ](#code11)
+[program-12 WAP for Make a registration form with 10 elements and send the data into database (use jdbc connectivity)](#code12)
+[program-13 WAP for Make one calculator in swing. ](#code13)
+[program-14 WAP for Matrix Addition using swing class.](#code14)
+[program-15 WAP for Create one jframe apply 10 buttons on that after clicking on each button a new structure is created. (Circle, oval rectangle, etc ](#code15)
+[program-16 WAP for Just using mouse Event create a frame like paint brush with selection of colour and width ](#code16)
+[program-17 WAP for Create one package and sub package import and test it.](#code17)
+[program-18 WAP for  Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception ](#code18)
+[program-19 WAP for To test the range of age of one student.write a program using user defined exception.](#code19)
+[program-20 WAP for File Handling Programs](#code20)
+[program-21 WAP for Inheritance Programs, using interface and abstract classes.](#code21)
 [program-1 WAP for ](#code1)
 [program-1 WAP for ](#code1)
 [program-1 WAP for ](#code1)
@@ -457,84 +457,210 @@ class AddSwing {
 import javax.swing.*;
 import java.awt.event.*;
 
-class RegistrationForm {
+public class RegisterForm {
     public static void main(String[] args) {
-        JFrame f = new JFrame("Registration");
 
+        JFrame f = new JFrame("Registration Form");
+
+        // Labels
         JLabel l1 = new JLabel("Name:");
-        JTextField t1 = new JTextField();
-
         JLabel l2 = new JLabel("Email:");
-        JTextField t2 = new JTextField();
+        JLabel l3 = new JLabel("Password:");
+        JLabel l4 = new JLabel("Gender:");
+        JLabel l5 = new JLabel("DOB:");
+        JLabel l6 = new JLabel("Phone:");
+        JLabel l7 = new JLabel("Address:");
+        JLabel l8 = new JLabel("Course:");
+        JLabel l9 = new JLabel("Hobbies:");
+        JLabel l10 = new JLabel("Country:");
 
+        // TextFields
+        JTextField t1 = new JTextField();
+        JTextField t2 = new JTextField();
+        JPasswordField t3 = new JPasswordField();
+        JTextField t5 = new JTextField();
+        JTextField t6 = new JTextField();
+        JTextField t7 = new JTextField();
+
+        // Radio Buttons (Gender)
+        JRadioButton r1 = new JRadioButton("Male");
+        JRadioButton r2 = new JRadioButton("Female");
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(r1); bg.add(r2);
+
+        // ComboBox (Course)
+        String courses[] = {"B.Tech","BCA","MCA","MBA"};
+        JComboBox c1 = new JComboBox(courses);
+
+        // CheckBoxes (Hobbies)
+        JCheckBox h1 = new JCheckBox("Reading");
+        JCheckBox h2 = new JCheckBox("Music");
+        JCheckBox h3 = new JCheckBox("Sports");
+
+        // Country ComboBox
+        String country[] = {"India","USA","UK","Canada"};
+        JComboBox c2 = new JComboBox(country);
+
+        // Button
         JButton b = new JButton("Submit");
 
-        l1.setBounds(50,50,100,30);
-        t1.setBounds(150,50,150,30);
+        // Set Bounds
+        l1.setBounds(50,30,100,30);   t1.setBounds(150,30,150,30);
+        l2.setBounds(50,70,100,30);   t2.setBounds(150,70,150,30);
+        l3.setBounds(50,110,100,30);  t3.setBounds(150,110,150,30);
+        l4.setBounds(50,150,100,30);  r1.setBounds(150,150,70,30); r2.setBounds(220,150,80,30);
+        l5.setBounds(50,190,100,30);  t5.setBounds(150,190,150,30);
+        l6.setBounds(50,230,100,30);  t6.setBounds(150,230,150,30);
+        l7.setBounds(50,270,100,30);  t7.setBounds(150,270,150,30);
+        l8.setBounds(50,310,100,30);  c1.setBounds(150,310,150,30);
+        l9.setBounds(50,350,100,30);  h1.setBounds(150,350,80,30); h2.setBounds(230,350,80,30); h3.setBounds(310,350,80,30);
+        l10.setBounds(50,390,100,30); c2.setBounds(150,390,150,30);
 
-        l2.setBounds(50,100,100,30);
-        t2.setBounds(150,100,150,30);
+        b.setBounds(150,440,100,30);
 
-        b.setBounds(100,160,100,30);
-
+        // Add components
         f.add(l1); f.add(t1);
         f.add(l2); f.add(t2);
+        f.add(l3); f.add(t3);
+        f.add(l4); f.add(r1); f.add(r2);
+        f.add(l5); f.add(t5);
+        f.add(l6); f.add(t6);
+        f.add(l7); f.add(t7);
+        f.add(l8); f.add(c1);
+        f.add(l9); f.add(h1); f.add(h2); f.add(h3);
+        f.add(l10); f.add(c2);
         f.add(b);
 
-        b.addActionListener(e -> {
-            System.out.println("Data Submitted: " + t1.getText() + " " + t2.getText());
+        // Button Action
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(f, "Registration Successful");
+            }
         });
 
-        f.setSize(400,300);
+        f.setSize(450,550);
         f.setLayout(null);
         f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
 ```
 
-<img width="469" height="353" alt="image" src="https://github.com/user-attachments/assets/e8ee00fe-9761-4e39-8473-e9fc5652bcc9" />
-
-<img width="667" height="135" alt="image" src="https://github.com/user-attachments/assets/d78aa138-366e-4dbd-a192-f1355e12399f" />
-
+<img width="523" height="657" alt="image" src="https://github.com/user-attachments/assets/bb839c2c-9771-47bd-88de-7227b5472fba" />
 
 ## Assi-13
 ```
 import javax.swing.*;
 import java.awt.event.*;
 
-class CalculatorSwing {
+public class Calculator {
     public static void main(String[] args) {
+
         JFrame f = new JFrame("Calculator");
 
-        JTextField t1 = new JTextField();
-        JTextField t2 = new JTextField();
-        JTextField t3 = new JTextField();
+        JTextField t = new JTextField();
+        t.setBounds(30,30,240,30);
 
-        JButton add = new JButton("+");
+        // Buttons
+        JButton b1 = new JButton("1");
+        JButton b2 = new JButton("2");
+        JButton b3 = new JButton("3");
+        JButton b4 = new JButton("+");
 
-        t1.setBounds(50,50,100,30);
-        t2.setBounds(50,100,100,30);
-        add.setBounds(50,150,100,30);
-        t3.setBounds(50,200,100,30);
+        JButton b5 = new JButton("4");
+        JButton b6 = new JButton("5");
+        JButton b7 = new JButton("6");
+        JButton b8 = new JButton("-");
 
-        f.add(t1); f.add(t2); f.add(add); f.add(t3);
+        JButton b9 = new JButton("7");
+        JButton b10 = new JButton("8");
+        JButton b11 = new JButton("9");
+        JButton b12 = new JButton("*");
 
-        add.addActionListener(e -> {
-            int a = Integer.parseInt(t1.getText());
-            int b = Integer.parseInt(t2.getText());
-            t3.setText(String.valueOf(a + b));
+        JButton b13 = new JButton("0");
+        JButton b14 = new JButton("C");
+        JButton b15 = new JButton("=");
+        JButton b16 = new JButton("/");
+
+        // Set positions
+        b1.setBounds(30,80,50,40);
+        b2.setBounds(90,80,50,40);
+        b3.setBounds(150,80,50,40);
+        b4.setBounds(210,80,50,40);
+
+        b5.setBounds(30,130,50,40);
+        b6.setBounds(90,130,50,40);
+        b7.setBounds(150,130,50,40);
+        b8.setBounds(210,130,50,40);
+
+        b9.setBounds(30,180,50,40);
+        b10.setBounds(90,180,50,40);
+        b11.setBounds(150,180,50,40);
+        b12.setBounds(210,180,50,40);
+
+        b13.setBounds(30,230,50,40);
+        b14.setBounds(90,230,50,40);
+        b15.setBounds(150,230,50,40);
+        b16.setBounds(210,230,50,40);
+
+        // Add components
+        f.add(t);
+        f.add(b1); f.add(b2); f.add(b3); f.add(b4);
+        f.add(b5); f.add(b6); f.add(b7); f.add(b8);
+        f.add(b9); f.add(b10); f.add(b11); f.add(b12);
+        f.add(b13); f.add(b14); f.add(b15); f.add(b16);
+
+        // Variables
+        final int[] num1 = new int[1];
+        final int[] num2 = new int[1];
+        final char[] op = new char[1];
+
+        // Number buttons
+        b1.addActionListener(e -> t.setText(t.getText() + "1"));
+        b2.addActionListener(e -> t.setText(t.getText() + "2"));
+        b3.addActionListener(e -> t.setText(t.getText() + "3"));
+        b5.addActionListener(e -> t.setText(t.getText() + "4"));
+        b6.addActionListener(e -> t.setText(t.getText() + "5"));
+        b7.addActionListener(e -> t.setText(t.getText() + "6"));
+        b9.addActionListener(e -> t.setText(t.getText() + "7"));
+        b10.addActionListener(e -> t.setText(t.getText() + "8"));
+        b11.addActionListener(e -> t.setText(t.getText() + "9"));
+        b13.addActionListener(e -> t.setText(t.getText() + "0"));
+
+        // Operators
+        b4.addActionListener(e -> { num1[0] = Integer.parseInt(t.getText()); op[0] = '+'; t.setText(""); });
+        b8.addActionListener(e -> { num1[0] = Integer.parseInt(t.getText()); op[0] = '-'; t.setText(""); });
+        b12.addActionListener(e -> { num1[0] = Integer.parseInt(t.getText()); op[0] = '*'; t.setText(""); });
+        b16.addActionListener(e -> { num1[0] = Integer.parseInt(t.getText()); op[0] = '/'; t.setText(""); });
+
+        // Equal
+        b15.addActionListener(e -> {
+            num2[0] = Integer.parseInt(t.getText());
+            int result = 0;
+
+            switch(op[0]) {
+                case '+': result = num1[0] + num2[0]; break;
+                case '-': result = num1[0] - num2[0]; break;
+                case '*': result = num1[0] * num2[0]; break;
+                case '/': result = num1[0] / num2[0]; break;
+            }
+
+            t.setText(String.valueOf(result));
         });
 
-        f.setSize(300,300);
+        // Clear
+        b14.addActionListener(e -> t.setText(""));
+
+        // Frame settings
+        f.setSize(320,350);
         f.setLayout(null);
         f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
+
 ```
 
-<img width="351" height="358" alt="image" src="https://github.com/user-attachments/assets/729edb2d-c13f-4346-b5e6-2fda6761c066" />
+<img width="362" height="414" alt="image" src="https://github.com/user-attachments/assets/9e4a37fb-91ee-449d-bad8-fb9d289740ac" />
+
 
 ## Assi-14
 ```
