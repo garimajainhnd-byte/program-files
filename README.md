@@ -19,11 +19,12 @@
 [program-19 WAP for To test the range of age of one student.write a program using user defined exception.](#code19)
 [program-20 WAP for File Handling Programs](#code20)
 [program-21 WAP for Inheritance Programs, using interface and abstract classes.](#code21)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
-[program-1 WAP for ](#code1)
+[program-22 WAP for Java program to create a file using FileWriter, write data into it, and then read the same file using FileReader and display its content using character stream. ](#code22)
+[program-23 WAP for Java program to copy content from one file to another using byte stream (FileInputStream and FileOutputStream). ](#code23)
+[program-24 WAP for Java program to copy content from one file to another using character stream (FileReader and FileWriter).](#code24)
+[program-25 WAP for a Java program to perform file copying using byte stream without using character stream.](#code25)
+[program-26 WAP for a Java Swing application for a Registration Form including various GUI components like JTextField, JPasswordField, JRadioButton, JCheckBox, JComboBox, and JButton. Display a success message on form submission.](#code26)
+[program-27 WAP for a Java program to write data into a file using FileOutputStream and then read and display the same data using FileInputStream (Byte Stream File Handling).](#code27)
 ## Assi-1
 ```
 class Arithmetic {
@@ -921,6 +922,263 @@ class InheritanceDemo {
 }
 ```
 <img width="644" height="139" alt="image" src="https://github.com/user-attachments/assets/c5e6d14b-229d-4762-b0eb-fbc9bef79481" />
+
+## Assi-22
+```
+import java.io.*;
+
+public class charFilecopy {
+    public static void main(String[] args) {
+        try {
+            // Create source file (for testing)
+            FileWriter test = new FileWriter("source.txt");
+            test.write("Hello Java Character Copy");
+            test.close();
+
+            // File transfer (character stream)
+            FileReader fr = new FileReader("source.txt");
+            FileWriter fw = new FileWriter("dest_char.txt");
+
+            int ch;
+            while ((ch = fr.read()) != -1) {
+                fw.write(ch);
+            }
+
+            fr.close();
+            fw.close();
+
+            System.out.println("File copied using character stream");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+<img width="625" height="132" alt="image" src="https://github.com/user-attachments/assets/a5f1e782-3997-4817-b22d-9820d7fbe1ff" />
+
+## Assi-23
+```
+import java.io.*;
+
+public class byteFilecopy {
+    public static void main(String[] args) {
+        try {
+            // Create source file (for testing)
+            FileOutputStream test = new FileOutputStream("source.txt");
+            String data = "Hello Java Byte Copy";
+            test.write(data.getBytes());
+            test.close();
+
+            // File transfer (byte stream)
+            FileInputStream fis = new FileInputStream("source.txt");
+            FileOutputStream fos = new FileOutputStream("dest_byte.txt");
+
+            int b;
+            while ((b = fis.read()) != -1) {
+                fos.write(b);
+            }
+
+            fis.close();
+            fos.close();
+
+            System.out.println("File copied using byte stream");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+<img width="629" height="131" alt="image" src="https://github.com/user-attachments/assets/6a01ee96-cdf5-4a76-8d11-ed2d54ecd8aa" />
+
+## Assi-24
+```
+import java.io.*;
+
+public class CharCopy {
+    public static void main(String[] args) {
+        try {
+            // Create source file
+            FileWriter test = new FileWriter("source.txt");
+            test.write("Hello Java Character Copy");
+            test.close();
+
+            // Character stream copy
+            FileReader fr = new FileReader("source.txt");
+            FileWriter fw = new FileWriter("dest_char.txt");
+
+            int ch;
+            while ((ch = fr.read()) != -1) {
+                fw.write(ch);
+            }
+
+            fr.close();
+            fw.close();
+
+            System.out.println("Character file copied successfully");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+<img width="576" height="116" alt="image" src="https://github.com/user-attachments/assets/a5451d6a-112f-4705-904e-8c82563f34c4" />
+
+## Assi-25
+```
+import java.io.*;
+
+public class ByteCopy {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("source.txt");
+            FileOutputStream fos = new FileOutputStream("dest.txt");
+
+            int b;
+            while ((b = fis.read()) != -1) {
+                fos.write(b);
+            }
+
+            fis.close();
+            fos.close();
+
+            System.out.println("Byte file copied successfully");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+<img width="597" height="119" alt="image" src="https://github.com/user-attachments/assets/f6a0976c-ebe6-4225-9d9c-659b5bea390d" />
+
+## Assi-26
+```
+import javax.swing.*;
+import java.awt.event.*;
+
+public class RegisterForm {
+    public static void main(String[] args) {
+
+        JFrame f = new JFrame("Registration Form");
+
+        // Labels
+        JLabel l1 = new JLabel("Name:");
+        JLabel l2 = new JLabel("Email:");
+        JLabel l3 = new JLabel("Password:");
+        JLabel l4 = new JLabel("Gender:");
+        JLabel l5 = new JLabel("DOB:");
+        JLabel l6 = new JLabel("Phone:");
+        JLabel l7 = new JLabel("Address:");
+        JLabel l8 = new JLabel("Course:");
+        JLabel l9 = new JLabel("Hobbies:");
+        JLabel l10 = new JLabel("Country:");
+
+        // TextFields
+        JTextField t1 = new JTextField();
+        JTextField t2 = new JTextField();
+        JPasswordField t3 = new JPasswordField();
+        JTextField t5 = new JTextField();
+        JTextField t6 = new JTextField();
+        JTextField t7 = new JTextField();
+
+        // Radio Buttons (Gender)
+        JRadioButton r1 = new JRadioButton("Male");
+        JRadioButton r2 = new JRadioButton("Female");
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(r1); bg.add(r2);
+
+        // ComboBox (Course)
+        String courses[] = {"B.Tech","BCA","MCA","MBA"};
+        JComboBox c1 = new JComboBox(courses);
+
+        // CheckBoxes (Hobbies)
+        JCheckBox h1 = new JCheckBox("Reading");
+        JCheckBox h2 = new JCheckBox("Music");
+        JCheckBox h3 = new JCheckBox("Sports");
+
+        // Country ComboBox
+        String country[] = {"India","USA","UK","Canada"};
+        JComboBox c2 = new JComboBox(country);
+
+        // Button
+        JButton b = new JButton("Submit");
+
+        // Set Bounds
+        l1.setBounds(50,30,100,30);   t1.setBounds(150,30,150,30);
+        l2.setBounds(50,70,100,30);   t2.setBounds(150,70,150,30);
+        l3.setBounds(50,110,100,30);  t3.setBounds(150,110,150,30);
+        l4.setBounds(50,150,100,30);  r1.setBounds(150,150,70,30); r2.setBounds(220,150,80,30);
+        l5.setBounds(50,190,100,30);  t5.setBounds(150,190,150,30);
+        l6.setBounds(50,230,100,30);  t6.setBounds(150,230,150,30);
+        l7.setBounds(50,270,100,30);  t7.setBounds(150,270,150,30);
+        l8.setBounds(50,310,100,30);  c1.setBounds(150,310,150,30);
+        l9.setBounds(50,350,100,30);  h1.setBounds(150,350,80,30); h2.setBounds(230,350,80,30); h3.setBounds(310,350,80,30);
+        l10.setBounds(50,390,100,30); c2.setBounds(150,390,150,30);
+
+        b.setBounds(150,440,100,30);
+
+        // Add components
+        f.add(l1); f.add(t1);
+        f.add(l2); f.add(t2);
+        f.add(l3); f.add(t3);
+        f.add(l4); f.add(r1); f.add(r2);
+        f.add(l5); f.add(t5);
+        f.add(l6); f.add(t6);
+        f.add(l7); f.add(t7);
+        f.add(l8); f.add(c1);
+        f.add(l9); f.add(h1); f.add(h2); f.add(h3);
+        f.add(l10); f.add(c2);
+        f.add(b);
+
+        // Button Action
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(f, "Registration Successful");
+            }
+        });
+
+        f.setSize(450,550);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
+```
+<img width="641" height="129" alt="image" src="https://github.com/user-attachments/assets/ef1859c9-e185-4643-a716-fdc96391ae39" />
+
+## Assi-27
+```
+import java.io.*;
+
+public class ByteFileDemo {
+    public static void main(String[] args) {
+        try {
+            FileOutputStream fos = new FileOutputStream("bytefile.txt");
+            fos.write("Hello".getBytes());
+            fos.close();
+
+            FileInputStream fis = new FileInputStream("bytefile.txt");
+
+            int b;
+            while ((b = fis.read()) != -1) {
+                System.out.print((char) b);
+            }
+
+            fis.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+<img width="623" height="118" alt="image" src="https://github.com/user-attachments/assets/fb412b0e-690e-47b7-b764-cc8f16662603" />
+
+
+
+
 
 
 
